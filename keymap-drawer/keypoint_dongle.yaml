@@ -176,11 +176,11 @@ layers:
   - ''
   MOUSE:
   - '&bootloader'
-  - TAB
+  - ESC
   - Q
-  - W
-  - E
-  - R
+  - '&mmv MOVE_X(-200)'
+  - '&mmv MOVE_X(-300)'
+  - '&mmv MOVE_X(400)'
   - T
   - Y
   - {t: U, h: '&mkp MB3'}
@@ -190,8 +190,8 @@ layers:
   - BSPC
   - CAPS
   - A
-  - S
-  - D
+  - '&mmv MOVE_X(400)'
+  - '&mmv MOVE_X(-100)'
   - F
   - G
   - '&mkp LCLK'
@@ -204,9 +204,9 @@ layers:
   - ENTER
   - LSHFT
   - Z
-  - X
-  - C
-  - V
+  - '&mmv MOVE_X(100)'
+  - '&mmv MOVE_X(200)'
+  - '&mmv MOVE_X(300)'
   - B
   - '&msc SCRL_DOWN'
   - '&msc SCRL_UP'
