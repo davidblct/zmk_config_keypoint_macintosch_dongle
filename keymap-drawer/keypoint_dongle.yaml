@@ -178,9 +178,9 @@ layers:
   - '&bootloader'
   - ESC
   - Q
-  - '&mmv MOVE_X(-200)'
-  - '&mmv MOVE_X(-300)'
-  - '&mmv MOVE_X(400)'
+  - '&mmv MOVE_Y(100)'
+  - '&mmv MOVE_Y(200)'
+  - '&mmv MOVE_Y(300)'
   - T
   - Y
   - {t: U, h: '&mkp MB3'}
