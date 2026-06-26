@@ -418,13 +418,13 @@ static void trackpoint_work_cb(struct k_work *work) {
 
         float slow_mult = 1.0f;
         if(slow_divide3_key_pressed){
-            slow_mult = SLOW1_KEY_MULTIPLIER;//k /3
+            slow_mult = SLOW_DIVIDE3_KEY_MULTIPLIER;//k /3
         }
         else if(slow_key_pressed){
             slow_mult = SLOW_KEY_MULTIPLIER;//y /2
         }
         else if(multiply2_key_pressed) {
-            slow_mult = SLOW2_KEY_MULTIPLIER;//h *2
+            slow_mult = MULTIPLY2_KEY_MULTIPLIER;//h *2
         }
         
 
