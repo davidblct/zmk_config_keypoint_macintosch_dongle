@@ -76,8 +76,10 @@ static struct k_work_q tp_workq;
 #define TRACKPOINT_I2C_ADDR 0x15
 #define TRACKPOINT_PACKET_LEN 7
 #define TRACKPOINT_MAGIC_BYTE0 0x50
-
+//divide /2  /3  *2 multiply
 #define SLOW_KEY_MULTIPLIER 0.5f
+#define SLOW_DIVIDE3_KEY_MULTIPLIER 0.3f
+#define MULTIPLY2_KEY_MULTIPLIER 2.0f
 
 static float scroll_residual_x = 0;
 static float scroll_residual_y = 0;
@@ -87,7 +89,9 @@ static uint32_t last_activity_time = 0;
 /* ========= 全局状态 ========= */
 static bool scroll_key_pressed = false;
 static bool arrow_key_pressed = false;
-static bool slow_key_pressed = false;
+static bool slow_key_pressed = false;// /2
+static bool slow_divide3_key_pressed = false;// /3
+static bool multiply2_key_pressed = false;// *2
 static bool last_scroll_key_pressed = false; // ★ NEW
 static bool last_arrow_key_pressed = false;
 uint32_t last_packet_time = 0;
@@ -127,7 +131,7 @@ static int special_key_listener_cb(const zmk_event_t *eh) {
     }
 
     // ★ NEW: Slow
-    if (ev->position == 22) {
+    if (ev->position == 22) {//j
         slow_key_pressed = ev->state;
         LOG_INF("slow_key position=37 %s", slow_key_pressed ? "PRESSED" : "RELEASED");
     }
@@ -136,21 +140,31 @@ static int special_key_listener_cb(const zmk_event_t *eh) {
 #endif
 
 #ifdef CONFIG_BOARD_KEYPOINT_DONGLE_RIGHT
-    if (ev->position == 21) {
+    if (ev->position == 37) {//n
         arrow_key_pressed = ev->state;
         LOG_INF("space position=49 %s", arrow_key_pressed ? "PRESSED" : "RELEASED");
     }
 
     // Scroll key (Space)
-    if (ev->position == 50) {
+    if (ev->position == 50) {//lower
         scroll_key_pressed = ev->state;
         LOG_INF("space position=49 %s", scroll_key_pressed ? "PRESSED" : "RELEASED");
     }
 
     // ★ NEW: Slow
-    if (ev->position == 23) {
+    if (ev->position == 7) {//key_y /2
         slow_key_pressed = ev->state;
         LOG_INF("slow_key position=37 %s", slow_key_pressed ? "PRESSED" : "RELEASED");
+    }
+
+    if (ev->position == 23) {//key_k /3
+        slow_divide3_key_pressed = ev->state;
+        LOG_INF("slow_key position=37 %s", slow_divide3_key_pressed ? "PRESSED" : "RELEASED");
+    }
+
+    if (ev->position == 21) {//key_h *2
+        multiply2_key_pressed = ev->state;
+        LOG_INF("slow_key position=37 %s", multiply2_key_pressed ? "PRESSED" : "RELEASED");
     }
 
     return 0;
@@ -402,7 +416,20 @@ static void trackpoint_work_cb(struct k_work *work) {
         float exp_mult = 1.0f;
 #endif
 
-        float slow_mult = slow_key_pressed ? SLOW_KEY_MULTIPLIER : 1.0f;
+        float slow_mult = 1.0f;
+        if(slow_divide3_key_pressed)
+        {
+            slow_mult = slow_divide3_key_pressed ? SLOW1_KEY_MULTIPLIER : 1.0f;//k /3
+        }
+        else if(slow_key_pressed)
+        {
+            slow_mult = slow_key_pressed ? SLOW_KEY_MULTIPLIER : 1.0f;//y /2
+        }
+        else if(multiply2_key_pressed)
+        {
+            slow_mult = multiply2_key_pressed ? SLOW2_KEY_MULTIPLIER : 1.0f;//h *2
+        }
+        
 
         float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
         float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
