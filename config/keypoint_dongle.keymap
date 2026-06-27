@@ -151,9 +151,9 @@
             display-name = "LOWER";
             bindings = <
 &BOT
-&kp LA(TAB)  &none      &none      &none       &none      &kp LC(T)  &none      &none      &none       &kp N9      &kp N0        &kp DEL
-&kp GRAVE    &kp LC(A)  &kp LC(S)  &trans      &trans     &kp MINUS  &mkp RCLK  &mkp RCLK  &kp EQUAL   &trans      &trans        &trans   &kp SINGLE_QUOTE  &none
-&kp LSHFT    &kp LC(Z)  &kp LC(S)  &kp LC(C)   &kp LC(V)  &trans     &trans     &trans     &bl BL_DEC  &bl BL_INC  &trans        &trans   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUBS  &kp RSHFT
+&kp LA(TAB)  &kp N1     &kp N2     &kp N3      &kp N4     &kp N5     &kp N6     &kp N7     &kp N8      &kp N9      &kp N0        &kp DEL
+&kp GRAVE    &kp LC(A)  &kp LC(S)  &trans      &kp LC(T)  &kp MINUS  &mkp RCLK  &mkp RCLK  &kp EQUAL   &trans      &trans        &trans   &kp SINGLE_QUOTE  &none
+&kp LSHFT    &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &trans     &trans     &trans     &bl BL_DEC  &bl BL_INC  &trans        &trans   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUBS  &kp RSHFT
 &none        &none      &BOT       &bt BT_CLR  &trans     &kp SPACE  &none      &none      &none       &none       &out OUT_TOG  &BOT     &trans                               &trans
             >;
 
