@@ -1,10 +1,66 @@
 layout: {zmk_keyboard: keypoint_dongle}
 layers:
-  QWERTY: ['&bootloader', ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, TAB, A, S, D, F, G, '&mkp LCLK', '&mkp LCLK', H, J, K, L, ;, ENTER, LSHFT, Z, X, C, V, B, PG DN,
-    PG UP, '&msc SCRL_DOWN', '&msc SCRL_UP', N, M, ',', ., /, RSHFT, LCTRL, LGUI, LALT, MUTE, RAISE, SPACE, LOWER, LOWER, SPACE, RAISE, MUTE, '-', '=', '`']
-  LOWER:
+  QWERTY:
   - '&bootloader'
   - ESC
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - TAB
+  - A
+  - S
+  - D
+  - F
+  - G
+  - '&mkp LCLK'
+  - '&mkp LCLK'
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ENTER
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - PG DN
+  - PG UP
+  - '&msc SCRL_DOWN'
+  - '&msc SCRL_UP'
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - RSHFT
+  - LCTRL
+  - LGUI
+  - LALT
+  - MUTE
+  - LOWER
+  - SPACE
+  - {t: DEL, h: RAISE}
+  - HOME
+  - END
+  - RAISE
+  - MUTE
+  - LEFT
+  - DOWN
+  - RIGHT
+  LOWER:
+  - '&bootloader'
+  - '`'
   - '1'
   - '2'
   - '3'
@@ -16,7 +72,7 @@ layers:
   - '9'
   - '0'
   - DEL
-  - CAPS
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -42,20 +98,20 @@ layers:
   - '&bl BL_INC'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '['
-  - ']'
+  - ''
+  - ''
   - NUBS
   - RSHFT
-  - LCTRL
-  - LGUI
+  - ''
+  - ''
   - '&bootloader'
   - BT CLR
-  - {t: ▽, type: trans}
+  - {type: held}
   - SPACE
-  - {t: LOWER, type: held}
-  - LOWER
-  - SPACE
-  - {t: MOUSE, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
   - OUT TOG
   - '&bootloader'
   - {t: ▽, type: trans}
@@ -108,9 +164,9 @@ layers:
   - LGUI
   - ''
   - ''
-  - {t: RAISE, type: held}
+  - RAISE
   - ''
-  - ''
+  - {type: held}
   - ''
   - ''
   - RAISE
@@ -118,63 +174,8 @@ layers:
   - ''
   - ''
   - ''
-  MOUSE:
-  - '&bootloader'
-  - ESC
-  - Q
-  - '&mmv MOVE_Y(100)'
-  - '&mmv MOVE_Y(200)'
-  - '&mmv MOVE_Y(300)'
-  - T
-  - Y
-  - {t: U, h: '&mkp MB3'}
-  - I
-  - O
-  - P
-  - BSPC
-  - CAPS
-  - A
-  - '&mmv MOVE_X(400)'
-  - '&mmv MOVE_X(-100)'
-  - F
-  - G
-  - '&mkp LCLK'
-  - '&mkp LCLK'
-  - H
-  - {t: J, h: '&mkp MB1'}
-  - K
-  - L
-  - ;
-  - ENTER
-  - LSHFT
-  - Z
-  - '&mmv MOVE_X(100)'
-  - '&mmv MOVE_X(200)'
-  - '&mmv MOVE_X(300)'
-  - B
-  - '&msc SCRL_DOWN'
-  - '&msc SCRL_UP'
-  - ''
-  - ''
-  - N
-  - {t: M, h: '&mkp MB2'}
-  - ','
-  - .
-  - /
-  - RSHFT
-  - LCTRL
-  - LGUI
-  - LALT
-  - ''
-  - RAISE
-  - SPACE
-  - '&mkp MB1'
-  - '&mkp MB1'
-  - '&tdRMCLK'
-  - RAISE
-  - MUTE
-  - '-'
-  - '='
-  - '`'
+  MOUSE: ['&bootloader', ESC, '', '', '', '', '', '', '&mkp MB3', '', '', '', BSPC, CAPS, '', '', '', '', '', '&mkp LCLK', '&mkp LCLK', '', '&mkp MB1', '', '', '',
+    ENTER, LSHFT, '', '', '', '', '', '&msc SCRL_DOWN', '&msc SCRL_UP', '', '', '', '&mkp MB2', '', '', '', '', LCTRL, LGUI, LALT, '', RAISE, SPACE, '&mkp MB1', '&mkp
+      MB1', '&tdRMCLK', RAISE, MUTE, '', '', '']
   RESERVE: ['&bootloader', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
