@@ -61,14 +61,14 @@ layers:
   LOWER:
   - '&bootloader'
   - Alt+TAB
-  - ''
-  - ''
-  - ''
-  - ''
-  - Ctl+T
-  - ''
-  - ''
-  - ''
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
   - '9'
   - '0'
   - DEL
@@ -76,7 +76,7 @@ layers:
   - Ctl+A
   - Ctl+S
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+T
   - '-'
   - '&mkp RCLK'
   - '&mkp RCLK'
@@ -88,7 +88,7 @@ layers:
   - ''
   - LSHFT
   - Ctl+Z
-  - Ctl+S
+  - Ctl+X
   - Ctl+C
   - Ctl+V
   - {t: ▽, type: trans}
