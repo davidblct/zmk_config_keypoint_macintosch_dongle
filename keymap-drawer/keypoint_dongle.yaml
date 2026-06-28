@@ -102,8 +102,8 @@ layers:
   - ']'
   - NUBS
   - RSHFT
-  - ''
-  - ''
+  - LCTRL
+  - LEFT ALT
   - '&bootloader'
   - BT CLR
   - {type: held}
@@ -161,7 +161,7 @@ layers:
   - UP ARROW
   - KP EQUAL
   - LCTRL
-  - ''
+  - LEFT ALT
   - ''
   - ''
   - ''
