@@ -151,10 +151,10 @@
             display-name = "LOWER";
             bindings = <
 &BOT
-&kp LA(TAB)  &kp N1     &kp N2     &kp N3      &kp N4     &kp N5     &kp N6     &kp N7     &kp N8      &kp N9      &kp N0        &kp DEL
-&kp GRAVE    &kp LC(A)  &kp LC(S)  &trans      &kp LC(T)  &kp MINUS  &mkp RCLK  &mkp RCLK  &kp EQUAL   &trans      &trans        &trans   &kp SINGLE_QUOTE  &none
-&kp LSHFT    &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &trans     &trans     &trans     &bl BL_DEC  &bl BL_INC  &trans        &trans   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUBS  &kp RSHFT
-&none        &none      &BOT       &bt BT_CLR  &trans     &kp SPACE  &none      &none      &none       &none       &out OUT_TOG  &BOT     &trans                               &trans
+&kp LA(TAB)  &kp N1        &kp N2     &kp N3      &kp N4     &kp N5     &kp N6     &kp N7     &kp N8      &kp N9      &kp N0        &kp DEL
+&kp GRAVE    &kp LC(A)     &kp LC(S)  &trans      &kp LC(T)  &kp MINUS  &mkp RCLK  &mkp RCLK  &kp EQUAL   &trans      &trans        &trans   &kp SINGLE_QUOTE  &none
+&kp LSHFT    &kp LC(Z)     &kp LC(X)  &kp LC(C)   &kp LC(V)  &trans     &trans     &trans     &bl BL_DEC  &bl BL_INC  &trans        &trans   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUBS  &kp RSHFT
+&kp LCTRL    &kp LEFT_ALT  &BOT       &bt BT_CLR  &trans     &kp SPACE  &none      &none      &none       &none       &out OUT_TOG  &BOT     &trans                               &trans
             >;
 
             sensor-bindings = <&BLE_encoder &inc_dec_kp UP DOWN>;
@@ -167,7 +167,7 @@
 &none      &kp CAPS        &kp F1  &kp F2  &kp F3  &kp F10  &kp KP_PLUS  &kp N7  &kp N8        &kp N9  &kp KP_ASTERISK  &kp BACKSPACE
 &none      &M2             &kp F4  &kp F5  &kp F6  &kp F11  &none        &none   &kp KP_MINUS  &kp N4  &kp N5           &kp N6          &kp KP_SLASH  &kp LOCKING_NUM
 &none      &kp LEFT_SHIFT  &kp F7  &kp F8  &kp F9  &kp F12  &none        &none   &none         &none   &kp PERIOD       &kp N1          &kp N2        &kp N3           &kp UP_ARROW  &kp KP_EQUAL
-&kp LCTRL  &none           &none   &none   &none   &M0      &none        &none   &none         &kp N0  &none            &kp LEFT_ARROW  &kp DOWN                       &kp RIGHT
+&kp LCTRL  &kp LEFT_ALT    &none   &none   &none   &M0      &none        &none   &none         &kp N0  &none            &kp LEFT_ARROW  &kp DOWN                       &kp RIGHT
             >;
         };
 
