@@ -17,8 +17,8 @@ layers:
   - ESCAPE
   - A
   - S
-  - {t: D, h: MOUSE}
-  - F
+  - D
+  - {t: F, h: MOUSE}
   - G
   - '&mkp LCLK'
   - '&mkp LCLK'
@@ -191,8 +191,8 @@ layers:
   - CAPS
   - ''
   - ''
-  - {type: held}
   - ''
+  - {type: held}
   - ''
   - '&mkp LCLK'
   - '&mkp LCLK'
