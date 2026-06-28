@@ -18,8 +18,8 @@ layers:
   - A
   - S
   - D
-  - {t: F, h: MOUSE}
-  - G
+  - F
+  - {t: G, h: MOUSE}
   - '&mkp LCLK'
   - '&mkp LCLK'
   - H
@@ -192,8 +192,8 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
   - ''
+  - {type: held}
   - '&mkp LCLK'
   - '&mkp LCLK'
   - ''
