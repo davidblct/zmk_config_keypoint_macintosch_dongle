@@ -135,16 +135,16 @@ static int special_key_listener_cb(const zmk_event_t *eh) {
     return 0;
 #endif
 
-#ifdef CONFIG_BOARD_KEYPOINT_DONGLE_RIGHT
+// #ifdef CONFIG_BOARD_KEYPOINT_DONGLE_RIGHT
 
-    // Scroll key (Space)
-    if (ev->position == 49) {
-        scroll_key_pressed = ev->state;
-        LOG_INF("space position=49 %s", scroll_key_pressed ? "PRESSED" : "RELEASED");
-    }
+//     // Scroll key (Space)
+//     if (ev->position == 49) {
+//         scroll_key_pressed = ev->state;
+//         LOG_INF("space position=49 %s", scroll_key_pressed ? "PRESSED" : "RELEASED");
+//     }
 
-    return 0;
-#endif
+//     return 0;
+// #endif
 }
 ZMK_LISTENER(a320_special_key_listener, special_key_listener_cb);
 ZMK_SUBSCRIPTION(a320_special_key_listener, zmk_position_state_changed);
