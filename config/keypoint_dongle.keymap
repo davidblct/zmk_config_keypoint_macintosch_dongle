@@ -138,10 +138,10 @@
             display-name = "QWERTY";
             bindings = <
 &BOT
-&kp ESC    &kp Q     &kp W     &kp E       &kp R  &kp T      &kp Y      &kp U      &kp I           &kp O         &kp P       &kp BSPC
-&kp TAB    &kp A     &kp S     &kp D       &kp F  &kp G      &mkp LCLK  &mkp LCLK  &kp H           &kp J         &kp K       &kp L     &kp SEMI   &kp ENTER
-&kp LSHFT  &kp Z     &kp X     &kp C       &kp V  &kp B      &kp PG_DN  &kp PG_UP  &msc SCRL_DOWN  &msc SCRL_UP  &kp N       &kp M     &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
-&kp LCTRL  &kp LGUI  &kp LALT  &kp C_MUTE  &mo 1  &kp SPACE  &lt 2 DEL  &mo 1      &kp SPACE       &mo 2         &kp C_MUTE  &tdRMCLK  &kp LEFT              &kp RIGHT
+&kp TAB    &kp Q     &kp W     &kp E       &kp R  &kp T      &kp Y           &kp U             &kp I           &kp O         &kp P       &kp BSPC
+&kp ESC    &kp A     &kp S     &kp D       &kp F  &kp G      &mkp LCLK       &mkp LCLK         &kp H           &kp J         &kp K       &kp L     &kp SEMI   &kp ENTER
+&kp LSHFT  &kp Z     &kp X     &kp C       &kp V  &kp B      &msc SCRL_DOWN  &msc SCRL_UP      &msc SCRL_DOWN  &msc SCRL_UP  &kp N       &kp M     &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
+&kp LCTRL  &kp LGUI  &kp LALT  &kp C_MUTE  &mo 1  &kp SPACE  &mo 2           &LMouse_sc 0 MB1  &none           &none         &kp C_MUTE  &tdRMCLK  &kp LEFT              &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LEFT RIGHT>;
@@ -152,9 +152,9 @@
             bindings = <
 &BOT
 &kp GRAVE     &kp N1     &kp N2     &kp N3      &kp N4     &kp N5     &kp N6     &kp N7     &kp N8      &kp N9      &kp N0        &kp DEL
-&kp LEFT_ALT  &kp LC(A)  &kp LC(S)  &none       &kp LC(T)  &kp MINUS  &mkp RCLK  &mkp RCLK  &kp EQUAL   &kp SQT     &kp HOME      &kp END  &kp SQT   &kp ENTER
-&kp LSHFT     &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &trans     &trans     &trans     &bl BL_DEC  &bl BL_INC  &trans        &trans   &kp LBKT  &kp RBKT   &kp NUBS  &kp RSHFT
-&kp LCTRL     &kp LGUI   &BOT       &bt BT_CLR  &trans     &kp SPACE  &none      &none      &none       &none       &out OUT_TOG  &BOT     &trans               &trans
+&kp LEFT_ALT  &kp LC(A)  &kp LC(S)  &kp LC(G)   &kp LC(T)  &kp MINUS  &mkp RCLK  &mkp RCLK  &kp EQUAL   &kp SQT     &kp HOME      &kp END  &kp DEL   &kp ENTER
+&kp LSHFT     &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &none      &trans     &trans     &bl BL_DEC  &bl BL_INC  &none         &none    &kp LBKT  &kp RBKT   &kp NUBS  &kp RSHFT
+&kp LCTRL     &kp LGUI   &BOT       &bt BT_CLR  &none      &kp SPACE  &none      &none      &none       &none       &out OUT_TOG  &BOT     &none                &none
             >;
 
             sensor-bindings = <&BLE_encoder &inc_dec_kp UP DOWN>;
@@ -166,7 +166,7 @@
 &BOT
 &none      &none           &kp F1  &kp F2  &kp F3    &kp F10  &kp KP_PLUS  &kp N7  &kp N8        &kp N9  &kp KP_MULTIPLY  &kp BSPC
 &none      &M2             &kp F4  &kp F5  &kp F6    &kp F11  &none        &none   &kp KP_MINUS  &kp N4  &kp N5           &kp N6          &kp KP_SLASH    &kp LOCKING_NUM
-&none      &kp LEFT_SHIFT  &kp F7  &kp F8  &kp F9    &kp F12  &none        &none   &none         &none   &kp PERIOD       &kp N1          &kp N2          &kp N3           &kp UP_ARROW     &kp KP_EQUAL
+&none      &kp LEFT_SHIFT  &kp F7  &kp F8  &kp F9    &kp F12  &none        &none   &none         &none   &kp PERIOD       &kp N1          &kp N2          &kp N3           &kp UP_ARROW     &kp LS(EQUAL)
 &kp LCTRL  &kp LEFT_ALT    &none   &none   &kp CAPS  &M0      &none        &none   &none         &kp N0  &none            &kp LEFT_ARROW  &kp DOWN_ARROW                   &kp RIGHT_ARROW
             >;
         };
@@ -175,11 +175,15 @@
             display-name = "MOUSE";
             bindings = <
 &BOT
-&kp TAB    &kp Q     &kp W     &kp E  &kp R  &kp T      &kp Y           &M_kp MB3 U       &kp I     &kp O        &kp P       &kp BSPC
-&kp CAPS   &kp A     &kp S     &kp D  &kp F  &kp G      &mkp LCLK       &mkp LCLK         &kp H     &M_kp MB1 J  &kp K       &kp L        &kp SEMI   &kp ENTER
-&kp LSHFT  &kp Z     &kp X     &kp C  &kp V  &kp B      &msc SCRL_DOWN  &msc SCRL_UP      &none     &none        &kp N       &M_kp MB2 M  &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
-&kp LCTRL  &kp LGUI  &kp LALT  &none  &mo 2  &kp SPACE  &mkp MB1        &LMouse_sc 0 MB1  &tdRMCLK  &mo 2        &kp C_MUTE  &kp MINUS    &kp EQUAL             &kp GRAVE
+&kp TAB    &kp Q     &kp W     &kp E       &kp R  &kp T      &kp Y           &kp U             &kp I  &kp O  &kp P       &kp BSPC
+&kp ESC    &kp A     &kp S     &kp D       &kp F  &kp G      &mkp LCLK       &mkp LCLK         &kp H  &kp J  &kp K       &kp L     &kp SEMI   &kp ENTER
+&kp LSHFT  &kp Z     &kp X     &kp C       &kp V  &kp B      &msc SCRL_DOWN  &msc SCRL_UP      &none  &none  &kp N       &kp M     &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
+&kp LCTRL  &kp LGUI  &kp LALT  &kp C_MUTE  &mo 1  &kp SPACE  &mo 2           &LMouse_sc 0 MB1  &none  &none  &kp C_MUTE  &tdRMCLK  &kp LEFT              &kp RIGHT
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp LEFT RIGHT>;
         };
 
         RES_layer {
