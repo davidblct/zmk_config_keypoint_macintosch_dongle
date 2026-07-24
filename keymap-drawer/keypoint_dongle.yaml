@@ -2,7 +2,7 @@ layout: {zmk_keyboard: keypoint_dongle}
 layers:
   QWERTY:
   - '&bootloader'
-  - {t: TAB, h: ESC}
+  - ESC
   - Q
   - W
   - E
@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - BSPC
-  - CAPS
+  - TAB
   - A
   - S
   - D
@@ -48,19 +48,19 @@ layers:
   - LGUI
   - LALT
   - MUTE
-  - RAISE
-  - SPACE
   - LOWER
+  - SPACE
+  - {t: DEL, h: RAISE}
   - LOWER
   - SPACE
   - RAISE
   - MUTE
-  - '-'
-  - '='
-  - '`'
+  - '&tdRMCLK'
+  - LEFT
+  - RIGHT
   LOWER:
   - '&bootloader'
-  - ESC
+  - '`'
   - '1'
   - '2'
   - '3'
@@ -72,25 +72,25 @@ layers:
   - '9'
   - '0'
   - DEL
-  - CAPS
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LEFT ALT
+  - Ctl+A
+  - Ctl+S
+  - ''
+  - Ctl+T
+  - '-'
   - '&mkp RCLK'
   - '&mkp RCLK'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '='
+  - ''''
+  - HOME
+  - END
   - ''''
   - ENTER
   - LSHFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -106,74 +106,74 @@ layers:
   - LGUI
   - '&bootloader'
   - BT CLR
-  - {t: ▽, type: trans}
+  - {type: held}
   - SPACE
-  - {t: LOWER, type: held}
-  - LOWER
-  - SPACE
-  - {t: MOUSE, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
   - OUT TOG
   - '&bootloader'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   RAISE:
   - '&bootloader'
-  - ESC
+  - ''
+  - ''
   - F1
-  - UP
+  - F2
   - F3
+  - F10
+  - KP PLUS
+  - '7'
+  - '8'
+  - '9'
+  - KP MULTIPLY
+  - BSPC
+  - ''
+  - '&M2'
   - F4
   - F5
   - F6
+  - F11
+  - ''
+  - ''
+  - KP MINUS
+  - '4'
+  - '5'
+  - '6'
+  - KP SLASH
+  - LOCKING NUM
+  - ''
+  - LEFT SHIFT
   - F7
   - F8
   - F9
-  - F10
-  - ''
-  - CAPS
-  - LEFT
-  - DOWN
-  - RIGHT
-  - ''
-  - ''
-  - ''
-  - ''
-  - F11
   - F12
   - ''
   - ''
   - ''
   - ''
-  - LSHFT
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - .
+  - '1'
+  - '2'
+  - '3'
+  - UP ARROW
+  - KP EQUAL
   - LCTRL
-  - LGUI
+  - LEFT ALT
   - ''
   - ''
-  - {t: RAISE, type: held}
+  - CAPS
+  - '&M0'
+  - {type: held}
   - ''
   - ''
+  - '0'
   - ''
-  - ''
-  - RAISE
-  - ''
-  - ''
-  - ''
-  - ''
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
   MOUSE:
   - '&bootloader'
   - TAB
