@@ -87,7 +87,8 @@ static uint32_t last_activity_time = 0;
 /* ========= 全局状态 ========= */
 static bool scroll_key_pressed = false;
 static bool arrow_key_pressed = false;
-static bool slow_key_pressed = false;
+static bool slow_key_pressed = false;// /2
+static bool multiply2_key_pressed = false;// *2
 static bool last_scroll_key_pressed = false; // ★ NEW
 static bool last_arrow_key_pressed = false;
 uint32_t last_packet_time = 0;
@@ -136,10 +137,10 @@ static int special_key_listener_cb(const zmk_event_t *eh) {
 #endif
 
 #ifdef CONFIG_BOARD_KEYPOINT_DONGLE_RIGHT
-    if (ev->position == 21) {
-        arrow_key_pressed = ev->state;
-        LOG_INF("space position=49 %s", arrow_key_pressed ? "PRESSED" : "RELEASED");
-    }
+    // if (ev->position == 21) {
+    //     arrow_key_pressed = ev->state;
+    //     LOG_INF("space position=49 %s", arrow_key_pressed ? "PRESSED" : "RELEASED");
+    // }
 
     // Scroll key (Space)
     if (ev->position == 50) {
@@ -148,9 +149,14 @@ static int special_key_listener_cb(const zmk_event_t *eh) {
     }
 
     // ★ NEW: Slow
-    if (ev->position == 23) {
+    if (ev->position == 52) {
         slow_key_pressed = ev->state;
         LOG_INF("slow_key position=37 %s", slow_key_pressed ? "PRESSED" : "RELEASED");
+    }
+    
+    if (ev->position == 51) {//key_space *2
+        multiply2_key_pressed = ev->state;
+        LOG_INF("slow_key position=37 %s", multiply2_key_pressed ? "PRESSED" : "RELEASED");
     }
 
     return 0;
@@ -402,7 +408,13 @@ static void trackpoint_work_cb(struct k_work *work) {
         float exp_mult = 1.0f;
 #endif
 
-        float slow_mult = slow_key_pressed ? SLOW_KEY_MULTIPLIER : 1.0f;
+        float slow_mult = 1.0f;
+        if(slow_key_pressed){
+            slow_mult = SLOW_KEY_MULTIPLIER;// /2
+        }
+        else if(multiply2_key_pressed) {
+            slow_mult = MULTIPLY2_KEY_MULTIPLIER;// *2
+        }
 
         float fx = dx * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
         float fy = dy * MOUSE_BASE_SPEED * tp_factor * exp_mult * slow_mult;
