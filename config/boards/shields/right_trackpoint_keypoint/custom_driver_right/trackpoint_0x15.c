@@ -78,6 +78,7 @@ static struct k_work_q tp_workq;
 #define TRACKPOINT_MAGIC_BYTE0 0x50
 
 #define SLOW_KEY_MULTIPLIER 0.5f
+#define MULTIPLY2_KEY_MULTIPLIER 2.0f
 
 static float scroll_residual_x = 0;
 static float scroll_residual_y = 0;
